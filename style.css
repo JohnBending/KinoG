@@ -1,0 +1,57 @@
+body {
+    background-image: url(1.png);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+table {
+    border-collapse: collapse;
+    border: 1px solid grey;
+    width: 500px;
+    margin: 10px auto auto;
+    font-family: arial;
+}
+td {
+    border: 1px solid grey;
+}
+
+table {
+    border: 3px solid grey;
+}
+
+.search {
+    padding: 12%;
+
+}
+
+#searchText {
+    background: #f9f2c7;
+    padding-left: 15px; /* Отступ */
+    height: 60px; /* Высота блока */
+    width: 50%; /* Ширина блока */
+    border-radius: 30px; /* Устанавливает радиус скругления уголков рамки*/
+}
+
+.button {
+
+    border: none;
+    height: 65px;
+    width: 40px;
+    position: absolute;
+    cursor: pointer;
+
+}
+
+#submitButton {
+    left: 62%;
+    background: url(3.png) no-repeat center center; /*http://htmlbook.ru/css/background-position */
+
+}
+
+#resetButton {
+    left: 66%;
+    background: url(2.png) no-repeat center center;
+
+}
