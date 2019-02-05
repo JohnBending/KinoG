@@ -4,6 +4,7 @@ $(document).ready(function () {
         if (searchText.length > 0) {
             ajaxReuest(searchText);
         } else {
+//    better print error nearby input in red color, add hidden block for error and show it if error         
             alert("Введите название фильма");
         }
     });
@@ -23,6 +24,13 @@ function ajaxReuest(term) {
             $.each(data.results, function (keyFilm, valFilm) {
 
                 var $filmTable = $('<table class="table" align="center"></table>');
+//                 you can get attribute value by direct reference to attribute instead of loop and if
+//                 if (valFilm.overview) check if attr is not empty
+//                 {
+//                 let $filtAttrTr = $('<tr><td>' + "описание" + '</td><td>' + valAttr + '</td></tr>');
+//                         $filmTable.append($filtAttrTr);
+//                 }
+                
                 $.each(valFilm, function (keyAttr, valAttr) {
 
 
@@ -33,6 +41,8 @@ function ajaxReuest(term) {
                     }
                     if (keyAttr === 'vote_average') {
                         if (valAttr > 6) {
+//                          alert for every film looks strangely
+//                          better print it using html on the page                
                             alert("Этот фильм  Неплох")
                         } else {
                             keyAttr = "оценка";
@@ -42,6 +52,8 @@ function ajaxReuest(term) {
                     }
                     if (keyAttr === 'backdrop_path') {
                         keyAttr = "постер";
+//                      move prefix of image url to constant variable to escape copy past
+//                         const varName = varValue
                         let $filtAttrTr = $('<tr><td>' + keyAttr + '</td><td><img src="' + 'https://image.tmdb.org/t/p/w300_and_h450_bestv2' + valAttr + '"></td></tr>');
                         $filmTable.append($filtAttrTr);
                     }
